@@ -1,4 +1,4 @@
-import {createConfig, Studio, DocumentActionComponent, DocumentOptions} from 'sanity'
+import {createConfig, Studio, DocumentActionComponent} from 'sanity'
 import {deskTool} from 'sanity/desk'
 import {visionTool} from '@sanity/vision'
 import types from './schema/index'

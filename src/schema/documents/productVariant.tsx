@@ -17,6 +17,23 @@ export default defineType({
     },
   ],
   fields: [
+    // Variant dimensions
+    defineField({
+      name: 'dimensions',
+      type: 'object',
+      fields: [
+        defineField({
+          name: 'width',
+          title: 'Width (mm)',
+          type: 'number',
+        }),
+        defineField({
+          name: 'height',
+          title: 'Height (mm)',
+          type: 'number',
+        }),
+      ],
+    }),
     // Product variant hidden status
     defineField({
       name: 'hidden',
