@@ -1,5 +1,5 @@
 import {TagIcon} from '@sanity/icons'
-import pluralize from 'pluralize'
+import pluralize from 'pluralize-esm'
 import ShopifyIcon from '../../components/icons/Shopify'
 import ProductHiddenInput from '../../components/inputs/ProductHidden'
 import ShopifyDocumentStatus from '../../components/media/ShopifyDocumentStatus'
@@ -65,16 +65,18 @@ export default defineType({
   preview: {
     select: {
       isDeleted: 'store.isDeleted',
-      optionCount: 'store.options.length',
+      options: 'store.options',
       previewImageUrl: 'store.previewImageUrl',
       priceRange: 'store.priceRange',
       status: 'store.status',
       title: 'store.title',
-      variantCount: 'store.variants.length',
+      variants: 'store.variants',
     },
     prepare(selection) {
-      const {isDeleted, optionCount, previewImageUrl, priceRange, status, title, variantCount} =
-        selection
+      const {isDeleted, options, previewImageUrl, priceRange, status, title, variants} = selection
+
+      const optionCount = options?.length
+      const variantCount = variants?.length
 
       let description = [
         variantCount ? pluralize('variant', variantCount, true) : 'No variants',
@@ -99,6 +101,7 @@ export default defineType({
             isDeleted={isDeleted}
             type="product"
             url={previewImageUrl}
+            title={title}
           />
         ),
       }

@@ -2,15 +2,16 @@
 // https://en.wikipedia.org/wiki/ISO_4217
 export const DEFAULT_CURRENCY_CODE = 'USD'
 
-// Document ids which:
-// - cannot be created in the 'new document' menu
-// - cannot be duplicated, unpublished or deleted
-export const LOCKED_DOCUMENT_IDS = []
-
 // Document types which:
 // - cannot be created in the 'new document' menu
 // - cannot be duplicated, unpublished or deleted
 export const LOCKED_DOCUMENT_TYPES = ['media.tag']
+
+// Document types which:
+// - cannot be created in the 'new document' menu
+// - cannot be duplicated, unpublished or deleted
+// - are from the Sanity Connect Shopify app - and can be linked to on Shopify
+export const SHOPIFY_DOCUMENT_TYPES = ['product', 'productVariant', 'collection']
 
 // References to include in 'internal' links
 export const PAGE_REFERENCES = [{type: 'collection'}, {type: 'product'}]

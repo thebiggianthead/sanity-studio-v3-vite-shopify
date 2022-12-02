@@ -26,7 +26,9 @@ export default defineField({
       // Regular styles
       styles: [
         {
+          // @ts-ignore
           blockEditor: {
+            // @ts-ignore
             render: ({children}) => (
               <div style={{fontSize: '1.25rem', lineHeight: 1.25}}>{children}</div>
             ),

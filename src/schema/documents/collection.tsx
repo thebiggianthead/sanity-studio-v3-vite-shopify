@@ -1,6 +1,6 @@
 import React from 'react'
 import {PackageIcon} from '@sanity/icons'
-import pluralize from 'pluralize'
+import pluralize from 'pluralize-esm'
 import {defineField, defineType} from 'sanity'
 import CollectionHiddenInput from '../../components/inputs/CollectionHidden'
 import ShopifyIcon from '../../components/icons/Shopify'
@@ -86,10 +86,17 @@ export default defineType({
     },
     prepare(selection) {
       const {imageUrl, isDeleted, rules, title} = selection
-      const ruleCount = rules.length
+      const ruleCount = rules?.length || 0
 
       return {
-        media: <ShopifyDocumentStatus isDeleted={isDeleted} type="collection" url={imageUrl} />,
+        media: (
+          <ShopifyDocumentStatus
+            isDeleted={isDeleted}
+            type="collection"
+            url={imageUrl}
+            title={title}
+          />
+        ),
         subtitle: ruleCount > 0 ? `Automated (${pluralize('rule', ruleCount, true)})` : 'Manual',
         title,
       }

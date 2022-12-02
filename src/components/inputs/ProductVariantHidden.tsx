@@ -1,5 +1,5 @@
 import {WarningOutlineIcon} from '@sanity/icons'
-import {StringInputProps, useFormValue} from 'sanity'
+import {StringFieldProps, useFormValue} from 'sanity'
 import {Box, Card, Flex, Stack, Text} from '@sanity/ui'
 import {productUrl} from '../../utils/shopifyUrls'
 
@@ -9,7 +9,7 @@ type Store = {
   isDeleted: boolean
 }
 
-export default function ProductVariantHiddenInput(props: StringInputProps) {
+export default function ProductVariantHiddenInput(props: StringFieldProps) {
   return (
     <Card padding={4} radius={2} shadow={1} tone="critical">
       <Flex align="flex-start">
