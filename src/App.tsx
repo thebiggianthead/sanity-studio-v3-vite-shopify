@@ -11,7 +11,7 @@ const config = defineConfig({
   name: 'sanity-studio-shopify',
   title: 'Sanity Studio / Shopify',
 
-  projectId: 'k4hg38xw',
+  projectId: 'your-project-id',
   dataset: 'production',
 
   plugins: [deskTool({structure}), customDocumentActions(), visionTool()],
